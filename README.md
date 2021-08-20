@@ -1,16 +1,19 @@
 ﻿![](https://img.shields.io/badge/Microverse-blueviolet) 
 
-# To Do list: Interactive List
+# To Do list: CRUD Interactive List JS.
 
-For this repository, I've created the structure for the List using HTML, CSS and JavaScript, but also I've added Local Storage as the local database to save your tasks in you local browser.
+For this repository, I've created an interactive list to create, read, update, and delete tasks to make a complete To-Do List. I've included front-end technologies in order to create this application, I used JavaScript, HTML5, CSS3, Bootstrap, and also, I've included Local Storage to handle the data inside this application.
 
-I've been using Webpack to manage the files for front-end, using loaders for HTML, CSS and JavaScript files, in order to fix some special thing at the moment to use the front-end in a server. Feel free to suggest more aditional features for this repository, or if you want to use it, feel free to do that as well.
+I've been using Webpack to manage the files for the front-end, using loaders for HTML, CSS, and JavaScript files, in order to fix some special thing at the moment to use the front-end in a server. Feel free to suggest more additional features for this repository, or if you want to use it, feel free to do that as well.
+
+
 
 ## Built With 🔨
 
 - JavaScript
 - HTML
 - CSS
+- Bootstrap
 - Webpack
 - Local Storage
 - Visual Studio Code
