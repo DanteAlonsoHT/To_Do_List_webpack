@@ -57,5 +57,14 @@ export class Methods {
           localStorage.setItem('all_tasks', JSON.stringify(data));
         }
     }
+
+    getLocalStorage = () => {
+        if (localStorage.getItem('all_tasks')) {
+          return JSON.parse(localStorage.getItem('all_tasks'));
+        }
+        else {
+            return [];
+        }
+    }
     
 }
