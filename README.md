@@ -1,8 +1,8 @@
 ﻿![](https://img.shields.io/badge/Microverse-blueviolet) 
 
-# To Do list: List Structure
+# To Do list: Interactive List
 
-For this repository, I've created the structure for the List using HTML, CSS and JavaScript.
+For this repository, I've created the structure for the List using HTML, CSS and JavaScript, but also I've added Local Storage as the local database to save your tasks in you local browser.
 
 I've been using Webpack to manage the files for front-end, using loaders for HTML, CSS and JavaScript files, in order to fix some special thing at the moment to use the front-end in a server. Feel free to suggest more aditional features for this repository, or if you want to use it, feel free to do that as well.
 
@@ -12,6 +12,7 @@ I've been using Webpack to manage the files for front-end, using loaders for HTM
 - HTML
 - CSS
 - Webpack
+- Local Storage
 - Visual Studio Code
 - Git & Github
 
@@ -26,7 +27,8 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - IDE to edit and run the code (We use Visual Studio Code 🔥).
-- Node.js already downloaded.
+- [Node.js](https://nodejs.org/en/download/) already downloaded.
+- Webpack - [click here to getting started](https://webpack.js.org/guides/getting-started/).
 
 
 ### Usage

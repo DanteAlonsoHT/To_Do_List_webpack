@@ -1,44 +1,44 @@
 /* eslint-disable-next-line */
+import { Methods } from './checkbox.js';
+/* eslint-disable-next-line */
 import style from './style.css';
 
-const containerTasks = document.getElementById('container-tasks');
+window.onload = function windowReady() {
+  const containerTasks = document.getElementById('container-tasks');
+  const buttonAddTask = document.getElementById('button-add-task');
 
-const tasks = [
-  {
-    description: 'Making a descriptive README file',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Add linters for the repository',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Improve CSS in the project',
-    completed: true,
-    index: 2,
-  },
-  {
-    description: 'Try to use Webpack for this app',
-    completed: false,
-    index: 3,
-  },
-];
+  const methods = new Methods();
 
-tasks.forEach((value) => {
-  let checked = '';
-  if (value.completed) {
-    checked = 'checked';
-  }
-  containerTasks.innerHTML
-    += `<div class="d-flex justify-content-between border border-light py-0 px-3 ">
-        <div class="d-flex">
-            <input type="checkbox" name="complete-checkbox" id="complete-checkbox"
-                    class="my-3" ${checked}>
-            <p class="m-2">${value.description}</p>
-        </div>
-        <button type="button" class="border-0 bg-body button-move"><i class='bx bx-dots-vertical-rounded'></i></button>
-        <button type="button" class="d-none border-0 bg-body"><i class='bx bx-trash'></i></button>
-    </div>`;
-});
+  buttonAddTask.onclick = function add() { methods.addTask(); };
+  methods.showTasks();
+
+  let indexList;
+  const list = methods.getLocalStorage();
+
+  containerTasks.addEventListener('click', (ev) => {
+    if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
+      if (ev.target.tagName === 'INPUT') {
+        const idTask = ev.target.id.replace('complete-checkbox-', '');
+        const buttonRemove = document.getElementById(`button-remove-${idTask}`);
+        const buttonMove = document.getElementById(`button-move-${idTask}`);
+        const taskLabel = document.getElementById(`task-name-${idTask}`);
+        indexList = parseInt(idTask, 10);
+
+        if (list) {
+          if (list[indexList].completed === 'false') {
+            list[indexList].completed = 'true';
+            buttonRemove.style.display = 'block';
+            buttonMove.style.display = 'none';
+            taskLabel.style.textDecoration = 'line-through';
+          } else {
+            list[indexList].completed = 'false';
+            buttonRemove.style.display = 'none';
+            buttonMove.style.display = 'block';
+            taskLabel.style.textDecoration = 'none';
+          }
+          methods.updateLocalStorage(list);
+        }
+      }
+    }
+  }, false);
+};
