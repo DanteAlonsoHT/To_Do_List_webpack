@@ -47,5 +47,15 @@ export class Methods {
                     </div>`;
         });
     }
+
+    saveLocalStorage(data) {
+        let allTasks;
+        allTasks = this.getLocalStorage();
+        if (allTasks.length !== 0) {
+          localStorage.setItem('all_tasks', JSON.stringify(allTasks.concat(data)));
+        } else {
+          localStorage.setItem('all_tasks', JSON.stringify(data));
+        }
+    }
     
 }
