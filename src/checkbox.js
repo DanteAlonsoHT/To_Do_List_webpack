@@ -12,4 +12,15 @@ export class Methods {
           formTasks.reset();
       }
     }
+
+    removeTask(index) {
+        let newData; 
+        if (index > -1) {
+          newData = this.getLocalStorage();
+          newData.splice(index, 1);
+          this.updateLocalStorage(newData);
+          this.showTasks();
+        }
+      }
+    
 }
