@@ -66,5 +66,9 @@ export class Methods {
             return [];
         }
     }
-    
+
+    updateLocalStorage = (data) => {
+        localStorage.clear();
+        localStorage.setItem('all_tasks', JSON.stringify(data));
+    }   
 }
