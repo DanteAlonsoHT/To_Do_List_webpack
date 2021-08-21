@@ -6,7 +6,7 @@ export class Methods {
     const formTasks = document.getElementById('form-tasks');
     if (inputTask.length > 8 && inputTask.length < 64) {
       // newTask = [[inputTask, 'false']];
-      lastIndexTasks = String(this.getLocalStorage().length);
+      lastIndexTasks = String(this.getLocalStorage().length + 1);
       newTask = [{ task_name: inputTask, completed: 'false', index: lastIndexTasks }];
       this.saveLocalStorage(newTask);
       this.showTasks();
@@ -22,7 +22,7 @@ export class Methods {
       newData.splice(index, 1);
 
       for (let k = index; k < (sizeData - 1); k += 1) {
-        newData[k].index = String(k, 10);
+        newData[k].index = String(k + 1, 10);
       }
       this.updateLocalStorage(newData);
       this.showTasks();
@@ -32,7 +32,7 @@ export class Methods {
   static showTasks() {
     const containerTasks = document.getElementById('container-tasks');
     containerTasks.innerHTML = '';
-    this.getLocalStorage().forEach((task, index) => {
+    this.getLocalStorage().forEach((task) => {
       let checked = ''; let lineThrough = '';
       let buttonRemoveStatus = 'style="display: none;"'; let buttonMoveStatus = '';
       if (task.completed === 'true') {
@@ -44,15 +44,15 @@ export class Methods {
       containerTasks.innerHTML
                   += `<div class="d-flex justify-content-between border border-light py-0 px-3 ">
                           <div class="d-flex">
-                              <input type="checkbox" name="complete-checkbox" id="complete-checkbox-${index}"
+                              <input type="checkbox" name="complete-checkbox" id="complete-checkbox-${task.index}"
                                       class="my-3 checkbox-input" ${checked}>
-                              <p class="m-2 w-100" id="task-name-${index}" ${lineThrough}>${task.task_name}</p>
-                              <input type="text" name="edit-name" class="form-control px-2 m-1 mx-2 edit-name w-100" id="edit-name-${index}" value="${task.task_name}">
+                              <p class="m-2 w-100" id="task-name-${task.index}" ${lineThrough}>${task.task_name}</p>
+                              <input type="text" name="edit-name" class="form-control px-2 m-1 mx-2 edit-name w-100" id="edit-name-${task.index}" value="${task.task_name}">
                           </div>
                           <div class="d-flex">
-                              <button type="button" class="border-0 bg-body button-move" id="button-move-${index}" ${buttonMoveStatus}><i class='bx bx-dots-vertical-rounded'></i></button>
-                              <button type="button" class="border-0 bg-body button-remove" id="button-remove-${index}" ${buttonRemoveStatus}"><i class='bx bx-trash' id="logo-trash-${index}"></i></button>
-                              <button type="button" class="border-0 bg-body button-edit" id="button-edit-${index}"><i class='bx bxs-edit' id="logo-edit-${index}"></i></button>
+                              <button type="button" class="border-0 bg-body button-move" id="button-move-${task.index}" ${buttonMoveStatus}><i class='bx bx-dots-vertical-rounded'></i></button>
+                              <button type="button" class="border-0 bg-body button-remove" id="button-remove-${task.index}" ${buttonRemoveStatus}"><i class='bx bx-trash' id="logo-trash-${task.index}"></i></button>
+                              <button type="button" class="border-0 bg-body button-edit" id="button-edit-${task.index}"><i class='bx bxs-edit' id="logo-edit-${task.index}"></i></button>
                           </div>
                       </div>`;
     });
