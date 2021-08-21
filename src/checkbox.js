@@ -5,7 +5,6 @@ export class Methods {
     inputTask = document.getElementById('input-task').value;
     const formTasks = document.getElementById('form-tasks');
     if (inputTask.length > 8 && inputTask.length < 64) {
-      // newTask = [[inputTask, 'false']];
       lastIndexTasks = String(this.getLocalStorage().length + 1);
       newTask = [{ task_name: inputTask, completed: 'false', index: lastIndexTasks }];
       this.saveLocalStorage(newTask);
