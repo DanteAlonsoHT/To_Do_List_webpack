@@ -5,6 +5,12 @@ body {
   background-color: #efefef;
 }
 
+main {
+  min-width: 300px;
+  max-width: 720px;
+  margin: 5rem auto;
+}
+
 h1 {
   font-size: 16px;
   color: #555;
@@ -35,4 +41,8 @@ input:focus {
 #button-clear:hover {
   text-decoration: underline;
   opacity: 100%;
+}
+
+.edit-name {
+  display: none;
 }
