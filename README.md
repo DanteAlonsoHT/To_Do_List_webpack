@@ -6,7 +6,7 @@ For this repository, I've created an interactive list to create, read, update, a
 
 I've been using Webpack to manage the files for the front-end, using loaders for HTML, CSS, and JavaScript files, in order to fix some special thing at the moment to use the front-end in a server. Feel free to suggest more additional features for this repository, or if you want to use it, feel free to do that as well.
 
-## [LINK DEMO 👀](https://raw.githack.com/DanteAlonsoHT/To_Do_List_webpack/add-and-remove/dist/index.html)
+## [LIVE DEMO LINK 👀](https://raw.githack.com/DanteAlonsoHT/To_Do_List_webpack/add-and-remove/dist/index.html)
 
 ## Built With 🔨
 
